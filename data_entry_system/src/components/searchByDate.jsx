@@ -15,7 +15,7 @@ const SearchByDate = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:3001/api/searchByDate?date=${date}`);
+            const response = await axios.get(`https://data-management-system-backend.onrender.com/api/searchByDate?date=${date}`);
 
             if (response.status === 200) {
                 setSearchResult(response.data);

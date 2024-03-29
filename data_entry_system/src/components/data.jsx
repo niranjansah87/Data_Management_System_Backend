@@ -28,7 +28,7 @@ const Main = () => {
     if (confirmSubmission) {
       try {
         // Make a POST request to your backend endpoint
-        const response = await axios.post('http://localhost:3001/api/insert', { date, words });
+        const response = await axios.post('https://data-management-system-backend.onrender.com/api/insert', { date, words });
 
         // Check the response status
         if (response.status === 201) {

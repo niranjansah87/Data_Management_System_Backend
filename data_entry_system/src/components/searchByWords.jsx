@@ -15,7 +15,7 @@ const SearchByWords = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:3001/api/searchByWord?words=${words}`);
+            const response = await axios.get(`https://data-management-system-backend.onrender.com/api/searchByWord?words=${words}`);
             console.log('Response:', response);
 
             if (response.status === 200) {
