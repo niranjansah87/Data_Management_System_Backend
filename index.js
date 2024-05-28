@@ -10,7 +10,9 @@ const app = express();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: false }));
+// Apply CORS middleware
+app.use(cors({ origin: '*', credentials: true }));
 // Create a connection pool for efficient database interactions
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -19,8 +21,10 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME
 });
 
-// Enable CORS for all routes
-app.use(cors());
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 (async () => {
   try {
